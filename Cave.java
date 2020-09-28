@@ -7,25 +7,52 @@ package cavedweller;
 
 /**
  *
- * @author jword
+ * @author ElSnako
  */
 public class Cave {
-    double temp;
-    int size;
-    Caveman caveman;
-    Bat bat;
-    Key key;
-    Food food1;
-    Door door;
+    private double temperature;
+    private int sizeOfCave;
+    private Bat bat; 
+    private Caveman caveman;
+    private Key key;
+    private Food food1;
+    private Door door;
     
     public Cave() {
-        this.temp = Math.random() * 100;
-        this.size = (int) (Math.random() * 11) + 6;
-        this.caveman = new Caveman("Grog",(int)(Math.random() * this.size),(int)(Math.random() * this.size));
+        this.temperature = Math.random() * 100;
+        this.sizeOfCave = 10 + (int) (11 * Math.random());
+        //instantiate (making the object)
+        this.caveman = new Caveman("Harvey", (int) (this.sizeOfCave * Math.random()), (int) (this.sizeOfCave * Math.random()));
+        this.food1 = new Food("apple", (int) (this.sizeOfCave * Math.random()), (int) (this.sizeOfCave * Math.random()));
     }
     
+    public void handleInput(String input) {
+        if (input.trim().equalsIgnoreCase("up")) {
+            this.caveman.moveUp();
+            System.out.println(this.caveman.toString());
+        }
+        else if (input.trim().equalsIgnoreCase("down")) {
+            this.caveman.moveDown();
+            System.out.println(this.caveman.toString());
+        }
+        else if (input.trim().equalsIgnoreCase("left")) {
+            this.caveman.moveLeft();
+            System.out.println(this.caveman.toString());
+        }
+        else if (input.trim().equalsIgnoreCase("right")) {
+            this.caveman.moveRight();
+            System.out.println(this.caveman.toString());
+        }
+        else if (input.trim().equalsIgnoreCase("close")) {
+            System.exit(0);
+        }
+        else {
+            System.out.println("Sorry, I don't understand");
+            System.out.println("Please use the words: up, down, left, and right");
+        }
+    }
     public String toString() {
-        return ""+size;
+        return "" + sizeOfCave;
     }
     
 }
