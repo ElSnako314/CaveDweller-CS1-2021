@@ -52,17 +52,17 @@ public class Caveman {
     }
     //Accessors - getters & setters
     public int getHP() {
-        return HP;
+        return setHP(HP);
     }
     
     //This makes sure that the HP is never set to anything above 100 for some odd reason
-    public void setHP(int HP) {
+    public int setHP(int HP) {
         if (HP <= 100 && HP > 0) {
-            this.HP = HP;
+            return this.HP = HP;
         }
         else {
             System.out.println("Don't eat too much, your HP is full");
-            this.HP = 100;
+            return this.HP = 100;
         }
     }
 
