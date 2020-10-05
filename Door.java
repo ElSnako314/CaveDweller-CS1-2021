@@ -10,5 +10,5 @@ package cavedweller;
  * @author ElSnako
  */
 public class Door {
-    
+    //Door's Fields/Instance variables
 }

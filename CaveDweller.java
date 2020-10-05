@@ -10,13 +10,13 @@ import java.util.Scanner;
 public class CaveDweller {
 
     public static void main(String[] args) {
-        Cave cave = new Cave();
-        System.out.println("The cave is " + cave.toString() + " units large");
-       
-        
         Scanner keyBoard = new Scanner(System.in);
         
-        //Making this repeat (a loop)
+        //Creating a new cave; gives a bit of information about the cave
+        Cave cave = new Cave();
+        System.out.println("The cave is " + cave.toString() + " units large");
+        
+        //Making a loop for movement around the cave (loop only ends when the user types in "close")
         String input = keyBoard.nextLine();
         while (!input.equals("close")) {
             input = keyBoard.nextLine();

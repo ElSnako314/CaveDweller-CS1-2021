@@ -10,5 +10,5 @@ package cavedweller;
  * @author ElSnako
  */
 public class Key {
-    
+    //Key's Fields/Instance variables
 }

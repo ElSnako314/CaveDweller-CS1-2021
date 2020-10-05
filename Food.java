@@ -10,11 +10,12 @@ package cavedweller;
  * @author ElSnako
  */
 public class Food {
-    //Fields
+    //Food's Fields/Instance variables
     private String foodType, name;
     private int healthBoost, x, y;
     private boolean isFoodEaten, isFoodRotten;
-    //Constructor
+    
+    //Food's Constructor
     public Food(String name, int x, int y) {
         this.healthBoost = 20;
         this.isFoodEaten = false;
@@ -22,14 +23,14 @@ public class Food {
         this.x = x;
         this.y = y;
     }
-    //Method
+    //Food's Methods
     public void foodName() {
-        name = "apple";
-        System.out.println(name);
+        this.name = "apple";
+        System.out.println(this.name);
     }
     
     public String toString() {
-        return "An " +name+ " appears at" + "x: "+x+", y: "+y;
+        return "An " + this.name + " appears at" + "x: "+x+", y: "+y;
     }
     
     //Accessors
@@ -52,5 +53,9 @@ public class Food {
     public boolean isIsFoodEaten() {
         return isFoodEaten;
     }
+        //A setter that changes the boolean "isFoodEaten"
+        public void setIsFoodEaten(boolean isFoodEaten) {
+            this.isFoodEaten = isFoodEaten;
+        }
     
 }
