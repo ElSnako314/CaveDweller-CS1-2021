@@ -27,9 +27,9 @@ public class Bat {
     }
     public void moveAround() {
         //increase/decrease x by random number
-        this.x += ((-1)^((int) (2 * Math.random()))) * ((int) (10 * Math.random()));
+        this.x += ((-1)^((int) (2 * Math.random()))) * ((int) (3 * Math.random()));
         //increase/decrease y by random number
-        this.y += ((-1)^((int) (2 * Math.random()))) * ((int) (10 * Math.random()));
+        this.y += ((-1)^((int) (2 * Math.random()))) * ((int) (3 * Math.random()));
     }
     
     public void bite(Caveman caveman) {
@@ -54,17 +54,41 @@ public class Bat {
     public int getX() {
         return x;
     }
-
-    public void setX(int x) {
-        this.x = x;
+    
+    public int setX(int x) {
+        //Cave size is just 15 because I don't know how to call the actual cave size
+        if (x >= 0 && x <= 15) {
+            return this.x = x;
+        }
+        else if (x < 0) {
+            return this.x = 0;
+        }
+        else if (x > 15) {
+            return this.x = 15;
+        }
+        else
+            System.out.println("Sir...what even???");
+            return 0;
     }
-
+    
     public int getY() {
-        return y;
+        return setY(y);
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public int setY(int y) {
+        //Cave size is just 15 because I don't know how to call the actual cave size
+        if (y >= 0 && y <= 15) {
+            return this.y = y;
+        }
+        else if (y < 0) {
+            return this.y = 0;
+        }
+        else if (y > 15) {
+            return this.y = 15;
+        }
+        else
+            System.out.println("Sir...what even???");
+            return 0;
     }
 
     public int getBatDamage() {

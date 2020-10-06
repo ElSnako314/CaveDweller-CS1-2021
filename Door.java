@@ -11,4 +11,18 @@ package cavedweller;
  */
 public class Door {
     //Door's Fields/Instance variables
+    private int x, y;
+    
+    public Door (int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 }

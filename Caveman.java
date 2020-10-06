@@ -52,6 +52,21 @@ public class Caveman {
         food.setIsFoodEaten(true);
         System.out.println("Me eat the " + food.getName() + "!!");
     }
+    
+    public void pickUpKey() {
+        this.cavemanHasKey = true;
+        
+    }
+    
+    public void openDoor() {
+        if (this.cavemanHasKey == true) {
+            System.out.println("YOU'RE FREE!! Caveman escaped.");
+            System.exit(0);
+        }
+        else {
+            System.out.println("Hmm, it's locked. If only there was a key...");
+        }
+    }
     //Accessors - getters & setters
     public int getHP() {
         return setHP(HP);
